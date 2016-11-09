@@ -10,10 +10,11 @@ body {
 }
 .container {
     position: relative;
-    width:1028px;
+    width:1035px;
     height: 768px;
     /*background-color: #ffbf00;*/
     background-image: url('../contract.jpg');
+    background-repeat: no-repeat;
 }
 
 .m-signature-pad {
