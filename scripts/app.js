@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 // declare modules
 angular.module('Authentication', []);
@@ -20,7 +20,8 @@ angular.module('BasicHttpAuthExample', [
         })
 
         .when('/', {
-            controller: 'HomeController',
+        	controller: 'SignModalCtrl',
+            //controller: 'HomeController',
             templateUrl: 'modules/home/views/home.html'
         })
 
