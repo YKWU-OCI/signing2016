@@ -1,16 +1,6 @@
 'use strict';
-/*
-angular.module('Home'[]);
 
-.controller('HomeController',
-    ['$scope',
-    function ($scope) {
-
-    }]);
-*/
-
-
-angular.module('Home').controller('SignModalCtrl', [
+angular.module('Home').controller('HomeController', [
   '$scope', '$modalInstance'
   function ($scope, $modalInstance) {
     $scope.done = function () {
