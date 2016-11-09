@@ -1,5 +1,5 @@
 'use strict';
-
+<!--
 app=angular.module('Home'[]);
 
 app.controller('HomeController',
@@ -7,7 +7,8 @@ app.controller('HomeController',
     function ($scope) {
 
     }]);
-    
+-->
+
 angular.module('app', [
   'signature',
 ]);
