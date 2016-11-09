@@ -2,8 +2,10 @@
 
 // declare modules
 angular.module('Authentication', []);
-angular.module('Home', ['signature']);
-
+angular.module('Home', []);
+angular.module('app', [
+  'signature',
+]);
 angular.module('BasicHttpAuthExample', [
     'Authentication',
     'Home',
@@ -20,8 +22,8 @@ angular.module('BasicHttpAuthExample', [
         })
 
         .when('/', {
-        	controller: 'SignModalCtrl',
-            //controller: 'HomeController',
+        	//controller: 'SignModalCtrl',
+            controller: 'HomeController',
             templateUrl: 'modules/home/views/home.html'
         })
 
