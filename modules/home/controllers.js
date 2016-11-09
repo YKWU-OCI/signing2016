@@ -8,3 +8,6 @@ app.controller('HomeController',
 
     }]);
     
+angular.module('app', [
+  'signature',
+]);
