@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Signature Pad demo</title>
-  <meta name="description" content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
+<meta charset="utf-8">
+<title>Signature Pad demo</title>
+<meta name="description"
+	content="Signature Pad - HTML5 canvas based smooth signature drawing using variable width spline interpolation.">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <link rel="stylesheet" href="css/signature-pad.css">
+<link rel="stylesheet" href="css/signature-pad.css">
 
-  <script type="text/javascript">
+<script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39365077-1']);
     _gaq.push(['_trackPageview']);
@@ -24,37 +26,34 @@
     })();
   </script>
 
-                    <script type="text/javascript">
+<script type="text/javascript">
                       var w=window;
                       if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document,AKSB=AKSB||{};AKSB.q=[];AKSB.mark=function(a,b){AKSB.q.push(["mark",a,b||(new Date).getTime()])};AKSB.measure=function(a,b,c){AKSB.q.push(["measure",a,b,c||(new Date).getTime()])};AKSB.done=function(a){AKSB.q.push(["done",a])};AKSB.mark("firstbyte",(new Date).getTime());AKSB.prof={custid:"498444",ustr:"ECDHE-RSA-AES128-GCM-SHA256",originlat:0,clientrtt:52,ghostip:"124.155.222.132",
                       ipv6:false,pct:10,clientip:"202.74.105.113",requestid:"4cead260",protocol:"",blver:10,akM:"x",akN:"ae",akTT:"O",akTX:"1",akTI:"4cead260",ai:"315707",ra:"",pmgn:"",pmgi:"",pmp:""};(function(a){var b=
                       d.createElement("script");b.async="async";b.src=a;a=d.getElementsByTagName("script");a=a[a.length-1];a.parentNode.insertBefore(b,a)})(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")};
                     </script>
-                    </head>
+</head>
 <body onselectstart="return false" class="container">
-
-  <div style="height: 600px">
-  
-  </div>
-  <div style="width: 400px">
-  
-  </div>
-  
- 
+	<div>
+		<div style="height: 600px"></div>
+		<div style="width: 400px"></div>
 
 
-  <div id="signature-pad" class="m-signature-pad" style="width: 400px;height: 300px">
-    <div class="m-signature-pad--body">
-      <canvas></canvas>
-    </div>
-    <div class="m-signature-pad--footer">
-      <div class="description">Sign above</div>
-      <button type="button" class="button clear" data-action="clear">Clear</button>
-      <button type="button" class="button save" data-action="save">Save</button>
-    </div>
-  </div>
 
-  <script src="js/signature_pad.js"></script>
-  <script src="js/app.js"></script>
+
+		<div id="signature-pad" class="m-signature-pad"
+			style="width: 400px; height: 300px">
+			<div class="m-signature-pad--body">
+				<canvas></canvas>
+			</div>
+			<div class="m-signature-pad--footer">
+				<div class="description">Sign above</div>
+				<button type="button" class="button clear" data-action="clear">Clear</button>
+				<button type="button" class="button save" data-action="save">Save</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/signature_pad.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
