@@ -1,5 +1,5 @@
 'use strict';
-<!--
+/*
 angular.module('Home'[]);
 
 .controller('HomeController',
@@ -7,7 +7,8 @@ angular.module('Home'[]);
     function ($scope) {
 
     }]);
--->
+*/
+
 
 angular.module('Home').controller('SignModalCtrl', [
   '$scope', '$modalInstance'
