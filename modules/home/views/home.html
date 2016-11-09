@@ -1,9 +1,16 @@
 <h1>Home</h1>
 <p>You're logged in!!</p>
 
-<signature-pad accept="accept" clear="clear" height="220" width="400"></signature-pad>
-<button ng-click="clear()">Clear signature</button>
-<button ng-click="signature = accept()">Sign</button>
-
+<div class="modal-header">
+    <h3 class="modal-title">Sign</h3>
+</div>
+<div class="modal-body">
+    <signature-pad accept="accept" clear="clear"></signature-pad>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default pull-left" ng-click="clear()">Clear signature</button>
+    <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+    <button class="btn btn-primary" ng-click="done()">Sign</button>
+</div>
 
 <p><a href="#/login">Logout</a></a></p>
