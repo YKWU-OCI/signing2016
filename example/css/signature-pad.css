@@ -10,7 +10,7 @@ body {
 }
 .container {
     position: relative;
-    width:1024px;
+    width:1028px;
     height: 768px;
     /*background-color: #ffbf00;*/
     background-image: url('../contract.jpg');
