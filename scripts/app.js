@@ -3,9 +3,7 @@
 // declare modules
 angular.module('Authentication', []);
 angular.module('Home', []);
-angular.module('Sign', [
-  'signature'
-]);
+angular.module('Sign', []);
 angular.module('BasicHttpAuthExample', [
     'Authentication',
     'Home',
