@@ -4,7 +4,7 @@
 angular.module('Authentication', []);
 angular.module('Home', []);
 angular.module('Sign', [
-  'signature',
+  'signature'
 ]);
 angular.module('BasicHttpAuthExample', [
     'Authentication',
