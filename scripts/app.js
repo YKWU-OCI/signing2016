@@ -25,7 +25,7 @@ angular.module('BasicHttpAuthExample', [
             //controller: 'HomeController',
             //templateUrl: 'modules/home/views/home.html'
             controller: 'SignController',
-            templateUrl: 'modules/sign/views/index.html'
+            templateUrl: 'modules/sign/index.html'
         })
 
         .otherwise({ redirectTo: '/login' });
