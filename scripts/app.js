@@ -3,12 +3,13 @@
 // declare modules
 angular.module('Authentication', []);
 angular.module('Home', []);
-angular.module('app', [
+angular.module('Sign', [
   'signature',
 ]);
 angular.module('BasicHttpAuthExample', [
     'Authentication',
     'Home',
+    'Sign',
     'ngRoute',
     'ngCookies'
 ])
@@ -22,9 +23,11 @@ angular.module('BasicHttpAuthExample', [
         })
 
         .when('/', {
-        	//controller: 'SignModalCtrl',
-            controller: 'HomeController',
-            templateUrl: 'modules/home/views/home.html'
+        	
+            //controller: 'HomeController',
+            //templateUrl: 'modules/home/views/home.html'
+            controller: 'SignController',
+            templateUrl: 'modules/sign/views/index.html'
         })
 
         .otherwise({ redirectTo: '/login' });
