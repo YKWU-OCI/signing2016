@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+AngularJs $http.post() Service Method Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('postserviceApp', []);
+app.controller('postserviceCtrl', function ($scope, $http) {
+$scope.name = null;
+$scope.age = null;
+$scope.adress = null;
+$scope.lblMsg = null;
+$scope.postdata = function (name, age, adress) {
+var data = {
+"jsonrpc": "2.0",
+		"method": "invoke",
+		"params": {
+			"type": 1,
+			"chaincodeID": {
+				"name": "068f785a21728b30206baed43f8383e511698382b54dc66bd27b3e53a9e754bfeacc4431955dbdea53a7d1c904238cba141dd2877ebd3b116352364890cd587b"
+			},
+			"ctorMsg": {
+				"function": "init_claim",
+				"args": [
+					"Signing ", "Signed ", " 12", " 12", " 2016"
+				]
+			},
+			"secureContext": "user_type1_6ef8f1b1d8"
+		},
+		"id": 43
+};
+//Call the services
+$http.post('https://9ac33af8-d726-4fbc-864c-1c2fdfd8db19_vp0.us.blockchain.ibm.com:443/chaincode', data).then(function (response) {
+if (response.data)
+$scope.msg = "Post Data Submitted Successfully!";
+}, function (response) {
+$scope.msg = "Service not Exists";
+$scope.statusval = response.status;
+$scope.statustext = response.statusText;
+$scope.headers = response.headers();
+});
+};
+});
+</script>
+</head>
+<body>
+<h2>AngularJS Http Post Method Example</h2>
+<div ng-app="postserviceApp" ng-controller="postserviceCtrl">
+<div>
+Name : <input ng-model="name" /><br/><br/>
+Age : <input ng-model="age" /><br/><br/>
+Adress : <input ng-model="adress" /><br/><br/>
+<input type="button" value="Send" ng-click="postdata(name, age, adress)" /> <br/><br/>
+</div>
+<p>Output Message : {{msg}}</p>
+<p>StatusCode: {{statusval}}</p>
+<p>Status: {{statustext}}</p>
+<p>Response Headers: {{headers}}</p>
+</div>
+</body>
+</html>
