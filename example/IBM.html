@@ -13,49 +13,60 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <link rel="stylesheet" href="css/signature-pad.css">
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script type="text/javascript">
-var app = angular.module('postserviceApp', []);
-app.controller('postserviceCtrl', function ($scope, $http) {
-$scope.name = null;
-$scope.age = null;
-$scope.adress = null;
-$scope.lblMsg = null;
-$scope.postdata = function (name, age, adress) {
-var data = {
-"jsonrpc": "2.0",
-		"method": "invoke",
-		"params": {
-			"type": 1,
-			"chaincodeID": {
-				"name": "068f785a21728b30206baed43f8383e511698382b54dc66bd27b3e53a9e754bfeacc4431955dbdea53a7d1c904238cba141dd2877ebd3b116352364890cd587b"
-			},
-			"ctorMsg": {
-				"function": "init_claim",
-				"args": [
-					"Signing ", "Signed ", " 12", " 12", " 2016"
-				]
-			},
-			"secureContext": "user_type1_6ef8f1b1d8"
-		},
-		"id": 43
-};
-//Call the services
-$http.post('https://9ac33af8-d726-4fbc-864c-1c2fdfd8db19_vp0.us.blockchain.ibm.com:443/chaincode', data).then(function (response) {
-if (response.data)
-$scope.msg = "Post Data Submitted Successfully!";
-}, function (response) {
-$scope.msg = "Service not Exists";
-$scope.statusval = response.status;
-$scope.statustext = response.statusText;
-$scope.headers = response.headers();
-});
-};
-});
+	var app = angular.module('postserviceApp', []);
+	app
+			.controller(
+					'postserviceCtrl',
+					function($scope, $http) {
+						$scope.name = null;
+						$scope.age = null;
+						$scope.adress = null;
+						$scope.lblMsg = null;
+						$scope.date = new Date();
+						$scope.postdata = function(name, age, adress) {
+							var data = {
+								"jsonrpc" : "2.0",
+								"method" : "invoke",
+								"params" : {
+									"type" : 1,
+									"chaincodeID" : {
+										"name" : "068f785a21728b30206baed43f8383e511698382b54dc66bd27b3e53a9e754bfeacc4431955dbdea53a7d1c904238cba141dd2877ebd3b116352364890cd587b"
+									},
+									"ctorMsg" : {
+										"function" : "init_claim",
+										"args" : [ "Signing ", "Signed ",
+												" 12", " 12", " 2016" ]
+									},
+									"secureContext" : "user_type1_6ef8f1b1d8"
+								},
+								"id" : 43
+							};
+							//Call the services
+							$http
+									.post(
+											'https://9ac33af8-d726-4fbc-864c-1c2fdfd8db19_vp0.us.blockchain.ibm.com:443/chaincode',
+											data)
+									.then(
+											function(response) {
+												if (response.data)
+													$scope.msg = "Post Data Submitted Successfully!";
+											},
+											function(response) {
+												$scope.msg = "Service not Exists";
+												$scope.statusval = response.status;
+												$scope.statustext = response.statusText;
+												$scope.headers = response
+														.headers();
+											});
+						};
+					});
 </script>
 </head>
 <body onselectstart="return false" class="container">
-	<div style="height: 768px"> 
+	<div style="height: 768px">
 		<div style="height: 550px"></div>
 		<div style="width: 400px"></div>
 
@@ -63,14 +74,16 @@ $scope.headers = response.headers();
 
 
 		<div id="signature-pad" class="m-signature-pad"
-			style="position: absolute; top:45%; left:20%; width: 400px; height: 300px">
+			style="position: absolute; top: 45%; left: 20%; width: 400px; height: 300px">
 			<div class="m-signature-pad--body">
 				<canvas></canvas>
 			</div>
-			<div class="m-signature-pad--footer" ng-app="postserviceApp" ng-controller="postserviceCtrl">
-				<div class="description">AAAA BBB, GM of IBM HK </div>
+			<div class="m-signature-pad--footer" ng-app="postserviceApp"
+				ng-controller="postserviceCtrl">
+				<div class="description">AAAA BBB, GM of IBM HK</div>
 				<button type="button" class="button clear" data-action="clear">Clear</button>
-				<button type="button" class="button save" data-action="save" value="Send" ng-click="postdata(name, age, adress)">Confirm</button>
+				<button type="button" class="button save" data-action="save"
+					value="Send" ng-click="postdata(name, age, adress)">Confirm</button>
 			</div>
 		</div>
 	</div>
