@@ -27,6 +27,24 @@
 						$scope.lblMsg = null;
 						$scope.date = new Date();
 						$scope.postdata = function(name, age, adress) {
+// 							var data = {
+// 								"jsonrpc" : "2.0",
+// 								"method" : "invoke",
+// 								"params" : {
+// 									"type" : 1,
+// 									"chaincodeID" : {
+// 										"name" : "068f785a21728b30206baed43f8383e511698382b54dc66bd27b3e53a9e754bfeacc4431955dbdea53a7d1c904238cba141dd2877ebd3b116352364890cd587b"
+// 									},
+// 									"ctorMsg" : {
+// 										"function" : "init_claim",
+// 										"args" : [ "Signing ", "Signed by IBM @",
+// 												" 12", " 12", " 2016" ]
+// 									},
+// 									"secureContext" : "user_type1_6ef8f1b1d8"
+// 								},
+// 								"id" : 43
+// 							};
+
 							var data = {
 								"jsonrpc" : "2.0",
 								"method" : "invoke",
@@ -37,13 +55,18 @@
 									},
 									"ctorMsg" : {
 										"function" : "init_claim",
-										"args" : [ "Signing ", "Signed ",
+										"args" : [ " Signing ", "Signed by IBM @",
 												" 12", " 12", " 2016" ]
 									},
 									"secureContext" : "user_type1_6ef8f1b1d8"
 								},
 								"id" : 43
 							};
+
+							data.params.ctorMsg.args[2]=new Date();
+							data.params.ctorMsg.args[3]="GM ";
+							data.params.ctorMsg.args[4]="MR.TAI";
+							
 							//Call the services
 							$http
 									.post(
