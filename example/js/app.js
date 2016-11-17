@@ -30,6 +30,7 @@ saveButton.addEventListener("click", function (event) {
     if (signaturePad.isEmpty()) {
         alert("Please provide signature first.");
     } else {
-        window.open(signaturePad.toDataURL());
+    	alert("Committed to IBM Blockchain");
+        //indow.open(signaturePad.toDataURL());
     }
 });
